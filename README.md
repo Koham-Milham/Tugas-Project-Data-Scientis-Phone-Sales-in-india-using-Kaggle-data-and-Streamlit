@@ -1,4 +1,4 @@
-# Tugas-Project--Data-Scientis-Phone-Sales-in-India-using-Kaggle-data-and-Streamlit
+# Tugas-Project-Data-Scientis-Phone-Sales-in-India-using-Kaggle-data-and-Streamlit
 
 
 [![Pre-commit](https://img.shields.io/badge/pre--commit-passing-brightgreen?logo=github)](https://github.com/ilhamsaang/Tugas-Data/actions)   [![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=github)](https://github.com/ilhamsaang/Tugas-Data/actions)    [![Documentation](https://img.shields.io/badge/Documentation-file-brightblue?logo=readthedocs)](https://docs.google.com/presentation/d/1YEaij5ZeBIOCvQnU78l52Ax7VHRz04ZD/edit?usp=sharing&ouid=106174243456610507450&rtpof=true&sd=true)   [![Dibimbing](https://img.shields.io/badge/Dibimbing-Online%20Bootcamp-Green?logo=bookstack&logoColor=white)](https://dibimbing.id/en) [![Deploy App](https://img.shields.io/badge/APP-streamlit%20-Green?logo=app&logoColor=white)](http://data-scientis-kaggle-phone-sales-in-india.streamlit.app/)
