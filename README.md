@@ -1,7 +1,7 @@
-# Tugas-Project--Data-Scientis-Phone-Sales-using-Kaggle-data-and-Streamlit
+# Tugas-Project--Data-Scientis-Phone-Sales-in-India-using-Kaggle-data-and-Streamlit
 
 
-[![Pre-commit](https://img.shields.io/badge/pre--commit-passing-brightgreen?logo=github)](https://github.com/ilhamsaang/Tugas-Data/actions)   [![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=github)](https://github.com/ilhamsaang/Tugas-Data/actions)    [![Documentation](https://img.shields.io/badge/Documentation-file-brightblue?logo=readthedocs)](https://docs.google.com/document/d/16DCU0SObi8ZhqjiYe0Ir8vifVu_H1YO9ENuhEdEjubw/edit?usp=sharing)   [![Dibimbing](https://img.shields.io/badge/Dibimbing-Online%20Bootcamp-Green?logo=bookstack&logoColor=white)](https://dibimbing.id/en)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-passing-brightgreen?logo=github)](https://github.com/ilhamsaang/Tugas-Data/actions)   [![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=github)](https://github.com/ilhamsaang/Tugas-Data/actions)    [![Documentation](https://img.shields.io/badge/Documentation-file-brightblue?logo=readthedocs)](https://docs.google.com/presentation/d/1YEaij5ZeBIOCvQnU78l52Ax7VHRz04ZD/edit?usp=sharing&ouid=106174243456610507450&rtpof=true&sd=true)   [![Dibimbing](https://img.shields.io/badge/Dibimbing-Online%20Bootcamp-Green?logo=bookstack&logoColor=white)](https://dibimbing.id/en) [![Deploy App](https://img.shields.io/badge/Dibimbing-Online%20Bootcamp-Green?logo=app&logoColor=white)]()
 
 > Disusun untuk program pelatihan **Data Science Fundamental (DSF) : Data Scientis** di <img src="./asset/Dbimbing Logo.png" alt="Dbimbing" width="10"/> [DBimbing](https://dibimbing.id/en)
 
@@ -14,7 +14,7 @@ Terima kasih kepada:
 
 ## 🎯 Tujuan
 
-Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan performa produk smartphone berdasarkan:
+Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan performa produk smartphone di india berdasarkan:
 - Harga jual vs harga asli
 - Diskon
 - Rating pengguna
