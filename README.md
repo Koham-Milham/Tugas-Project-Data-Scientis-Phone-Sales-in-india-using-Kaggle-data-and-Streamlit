@@ -44,8 +44,6 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 ## 📈 Hasil Visualisasi
 
 ### 1️⃣ Korelasi Fitur Numerik & Performa Brand
-
-![heatmap_and_performance](./heatmap fitur numerik dan performa brand berdasarkan harga vs rating.png)
 <img src="./asset/heatmap fitur numerik dan performa brand berdasarkan harga vs rating.png" alt="Hasil1" width="300"/>
 - **Selling Price** & **Original Price** memiliki korelasi hampir sempurna (0.99)
 - **Discount** dan **discount percentage** juga sangat berkorelasi (0.66)
@@ -57,7 +55,6 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 
 ### 2️⃣ Korelasi Rating, Diskon & Rata-rata Diskon per Brand
 
-![korelasi_rating_diskon](./Korelasi Rating vs Selling Price, Distribusi diskon, dan rata rata diskon perbrand.png)
 <img src="./asset/Korelasi Rating vs Selling Price, Distribusi diskon, dan rata rata diskon perbrand.png" alt="Hasil2" width="300"/>
 - Scatter plot: hubungan rating vs harga jual menunjukkan tren lemah (r = 0.39)
 - Histogram: mayoritas produk memiliki diskon sangat kecil atau tidak ada
@@ -67,7 +64,6 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 
 ### 3️⃣ Rata-rata Harga Jual & Asli per Brand
 
-![selling_vs_original](./Average Selling vs Original Price per Brand (Sorted by Selling Price).png)
 <img src="./asset/Average Selling vs Original Price per Brand (Sorted by Selling Price).png" alt="Hasil3" width="300"/>
 
 - Apple tetap mendominasi dengan harga tertinggi, baik jual maupun asli
@@ -77,7 +73,6 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 
 ### 4️⃣ Diskon: Distribusi & Hubungan dengan Harga
 
-![diskon_4_plot](./distribusi persentase diskon, disribusi persentase diskon per brand, hubungan diskon dan harga jual, korelasi vs presentase diskon.png)
 <img src="./asset/distribusi persentase diskon, disribusi persentase diskon per brand, hubungan diskon dan harga jual, korelasi vs presentase diskon.png" alt="Hasil4" width="300"/>
 - Diskon >20% sangat jarang
 - Beberapa brand tertentu cenderung memberi diskon besar (tapi bukan yang paling laku)
