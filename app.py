@@ -16,6 +16,9 @@ st.markdown("""
 Terima kasih kepada mentor dan teman-teman yang telah memberikan bimbingan serta dukungan. 🙌  
 """)
 
+# === KONFIGURASI KONVERSI HARGA ===
+conversion_rate = 190  # 1 INR = 190 IDR
+show_rupiah = st.sidebar.toggle("💱 Tampilkan Harga dalam Rupiah (IDR)", value=False)
 
 # Load data
 df = pd.read_csv("Sales Phone.csv")
@@ -26,23 +29,42 @@ df['Discount'].fillna(0, inplace=True)
 df['discount percentage'].fillna(0, inplace=True)
 df.dropna(subset=['Selling Price', 'Original Price'], inplace=True)
 
+# Tambahkan kolom harga IDR
+df['Selling Price (IDR)'] = df['Selling Price'] * conversion_rate
+df['Original Price (IDR)'] = df['Original Price'] * conversion_rate
+
+# Format harga ke mata uang
+def format_currency(val, rupiah=False):
+    if rupiah:
+        return f"Rp {val:,.0f}".replace(",", ".")
+    else:
+        return f"₹ {val:,.0f}"
+
 # === SIDEBAR FILTER ===
 st.sidebar.header("🎛️ Filter Data")
 brands = st.sidebar.multiselect("Pilih Brand:", sorted(df['Brands'].unique()), default=sorted(df['Brands'].unique()))
 rating_range = st.sidebar.slider("Range Rating", 0.0, 5.0, (3.0, 5.0), step=0.1)
-price_range = st.sidebar.slider("Range Harga Jual", 0, int(df['Selling Price'].max()), (0, int(df['Selling Price'].max())))
+price_col = 'Selling Price (IDR)' if show_rupiah else 'Selling Price'
+price_range = st.sidebar.slider(
+    "Range Harga Jual",
+    int(df[price_col].min()),
+    int(df[price_col].max()),
+    (int(df[price_col].min()), int(df[price_col].max()))
+)
 
 # Filter data
 df_filtered = df[
     (df['Brands'].isin(brands)) &
     (df['Rating'] >= rating_range[0]) & (df['Rating'] <= rating_range[1]) &
-    (df['Selling Price'] >= price_range[0]) & (df['Selling Price'] <= price_range[1])
+    (df[price_col] >= price_range[0]) & (df[price_col] <= price_range[1])
 ]
+
 # === METRICS ===
 st.markdown("## 📊 Ringkasan Data")
 col1, col2, col3 = st.columns(3)
 col1.metric("Jumlah Produk", len(df_filtered))
-col2.metric("Rata-rata Harga Jual", f"₹ {int(df_filtered['Selling Price'].mean()):,}")
+avg_price = df_filtered[price_col].mean()
+col2.metric("Rata-rata Harga Jual", format_currency(avg_price, show_rupiah))
 col3.metric("Rata-rata Rating", f"{df_filtered['Rating'].mean():.2f}")
 
 # === VISUALISASI ===
@@ -51,17 +73,19 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Rata-rata Harga Jual dan Harga Asli per Brand")
     fig, ax = plt.subplots(figsize=(8, 4))
-    mean_prices = df_filtered.groupby('Brands')[['Selling Price', 'Original Price']].mean()
+    group_col1 = 'Selling Price (IDR)' if show_rupiah else 'Selling Price'
+    group_col2 = 'Original Price (IDR)' if show_rupiah else 'Original Price'
+    mean_prices = df_filtered.groupby('Brands')[[group_col1, group_col2]].mean()
     mean_prices.plot(kind='bar', ax=ax)
-    ax.set_ylabel("Rata-rata Harga (₹)INR")
+    ax.set_ylabel("Harga (Rp)" if show_rupiah else "Harga (₹)")
     st.pyplot(fig)
 
 with col2:
     st.subheader("Rating vs Harga Jual")
     fig, ax = plt.subplots(figsize=(8, 4))
-    scatter = sns.scatterplot(data=df_filtered, x='Rating', y='Selling Price', hue='Brands', ax=ax)
+    sns.scatterplot(data=df_filtered, x='Rating', y=price_col, hue='Brands', ax=ax)
+    ax.set_ylabel("Harga Jual (Rp)" if show_rupiah else "Selling Price (₹)")
     ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='Brands')
-    ax.set_ylabel("Selling Price")
     st.pyplot(fig)
 
 st.subheader("Korelasi Fitur Numerik")
@@ -75,13 +99,16 @@ sns.boxplot(data=df_filtered, x='Brands', y='discount percentage', ax=ax)
 ax.set_ylabel("Diskon (%)")
 st.pyplot(fig)
 
+# === REKOMENDASI PRODUK ===
 st.markdown("## 📲 Rekomendasi Produk Berdasarkan Filter")
 
 # TOP 5 berdasarkan rating tertinggi & harga jual termurah
-top_products = df_filtered.sort_values(by=['Rating', 'Selling Price'], ascending=[False, True]).head(5)
+top_products = df_filtered.sort_values(by=['Rating', price_col], ascending=[False, True]).head(5)
 
 st.markdown("### 🔝 Top 5 Rekomendasi HP (Rating & Harga)")
-st.dataframe(top_products[['Mobile', 'Rating', 'Selling Price', 'Original Price', 'Memory', 'Storage', 'Camera']].reset_index(drop=True))
+top_display = top_products.copy()
+top_display['Harga'] = top_display[price_col].apply(lambda x: format_currency(x, show_rupiah))
+st.dataframe(top_display[['Mobile', 'Rating', 'Harga', 'Original Price', 'Memory', 'Storage', 'Camera']].reset_index(drop=True))
 
 # Alternatif tambahan: berdasarkan spesifikasi teknis
 st.markdown("### ⚙️ Alternatif Terbaik Berdasarkan Spesifikasi")
