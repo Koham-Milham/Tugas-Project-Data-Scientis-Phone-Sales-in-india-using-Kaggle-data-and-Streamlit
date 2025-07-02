@@ -99,18 +99,17 @@ ax.set_ylabel("Diskon (%)")
 st.pyplot(fig)
 
 # === REKOMENDASI PRODUK ===
-st.markdown("### 📲 Rekomendasi Produk Berdasarkan Filter")
-
+st.markdown("<h4 style='margin-bottom: 10px;'>📲 Rekomendasi Produk Berdasarkan Filter/h4>", unsafe_allow_html=True)
 # TOP 5 berdasarkan rating tertinggi & harga jual termurah
 top_products = df_filtered.sort_values(by=['Rating', price_col], ascending=[False, True]).head(5)
 
-st.markdown("#### 🔝 Top 5 Rekomendasi HP (Rating & Harga)")
+st.markdown("<h5 style='margin-bottom: 10px;'>🔝 Top 5 Rekomendasi HP (Rating & Harga)/h5>", unsafe_allow_html=True)
 top_display = top_products.copy()
 top_display['Harga'] = top_display[price_col].apply(lambda x: format_currency(x, show_rupiah))
 st.dataframe(top_display[['Mobile', 'Rating', 'Harga', 'Original Price', 'Memory', 'Storage', 'Camera']].reset_index(drop=True))
 
 # Alternatif tambahan: berdasarkan spesifikasi teknis
-st.markdown("#### ⚙️ Alternatif Terbaik Berdasarkan Spesifikasi")
+st.markdown("<h5 style='margin-bottom: 10px;'>⚙️ Alternatif Terbaik Berdasarkan Spesifikasi/h5>", unsafe_allow_html=True)
 
 alt_col1, alt_col2, alt_col3 = st.columns(3)
 
