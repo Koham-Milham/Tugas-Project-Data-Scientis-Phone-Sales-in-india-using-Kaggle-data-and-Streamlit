@@ -45,9 +45,9 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 
 ### 1️⃣ Korelasi Fitur Numerik & Performa Brand
 <img src="./asset/heatmap fitur numerik dan performa brand berdasarkan harga vs rating.png" alt="Hasil1" width="300"/>
-- **Selling Price** & **Original Price** memiliki korelasi hampir sempurna (0.99)
-- **Discount** dan **discount percentage** juga sangat berkorelasi (0.66)
-- **Rating** hanya sedikit berkorelasi dengan harga → artinya kualitas tidak selalu tergantung harga
+- <strong>Selling Price</strong> & <strong>Original Price</strong> memiliki korelasi hampir sempurna (0.99)
+- <strong>Discount</strong> dan <strong>discount percentage</strong> juga sangat berkorelasi (0.66)
+- <strong>Rating</strong> hanya sedikit berkorelasi dengan harga → artinya kualitas tidak selalu tergantung harga
 
 📌 Brand seperti **Apple** punya harga tinggi & rating tinggi, sedangkan brand lain seperti **realme** punya value-for-money bagus.
 
@@ -58,7 +58,7 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 <img src="./asset/Korelasi Rating vs Selling Price, Distribusi diskon, dan rata rata diskon perbrand.png" alt="Hasil2" width="300"/>
 - Scatter plot: hubungan rating vs harga jual menunjukkan tren lemah (r = 0.39)
 - Histogram: mayoritas produk memiliki diskon sangat kecil atau tidak ada
-- Barplot: brand seperti **Motorola, POCO** memberi diskon lebih besar dibanding Apple/Samsung
+- Barplot: brand seperti <strong>Motorola, POCO</strong> memberi diskon lebih besar dibanding <strong>Apple/Samsung</strong>
 
 ---
 
