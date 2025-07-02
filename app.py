@@ -70,7 +70,7 @@ col3.metric("Rata-rata Rating", f"{df_filtered['Rating'].mean():.2f}")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Rata-rata Harga Jual dan Harga Asli per Brand")
+    st.markdown("<h5 style='margin-bottom: 10px;'>Rata-rata Harga Jual dan Harga Asli per Brand</h5>", unsafe_allow_html=True)
     fig, ax = plt.subplots(figsize=(8, 4))
     group_col1 = 'Selling Price (IDR)' if show_rupiah else 'Selling Price'
     group_col2 = 'Original Price (IDR)' if show_rupiah else 'Original Price'
