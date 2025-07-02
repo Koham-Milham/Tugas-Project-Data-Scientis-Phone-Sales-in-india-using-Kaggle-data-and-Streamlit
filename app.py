@@ -42,7 +42,7 @@ df_filtered = df[
 st.markdown("## 📊 Ringkasan Data")
 col1, col2, col3 = st.columns(3)
 col1.metric("Jumlah Produk", len(df_filtered))
-col2.metric("Rata-rata Harga Jual", f"Rp {int(df_filtered['Selling Price'].mean()):,}")
+col2.metric("Rata-rata Harga Jual", f"₹ {int(df_filtered['Selling Price'].mean()):,}")
 col3.metric("Rata-rata Rating", f"{df_filtered['Rating'].mean():.2f}")
 
 # === VISUALISASI ===
@@ -53,7 +53,7 @@ with col1:
     fig, ax = plt.subplots(figsize=(8, 4))
     mean_prices = df_filtered.groupby('Brands')[['Selling Price', 'Original Price']].mean()
     mean_prices.plot(kind='bar', ax=ax)
-    ax.set_ylabel("Rata-rata Harga (Rp)")
+    ax.set_ylabel("Rata-rata Harga (₹)INR")
     st.pyplot(fig)
 
 with col2:
