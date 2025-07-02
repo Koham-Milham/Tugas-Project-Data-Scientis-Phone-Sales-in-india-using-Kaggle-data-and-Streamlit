@@ -11,9 +11,8 @@ st.markdown("""
 # 📱 Dashboard Penjualan Smartphone
 
 ### 👤 Mohammad Ilham  
-🔗 [LinkedIn](https://www.linkedin.com/in/yourusername) | 🌐 [GitHub](https://github.com/yourusername) | 🧾 [Dokumentasi Proyek](https://yourlink.com)
-
-> Dashboard interaktif ini dibuat sebagai bagian dari tugas akhir program **Faculty of Data - DBIMBING**.  
+🔗 [LinkedIn](https://www.linkedin.com/in/immohilham/) | 🌐 [GitHub](https://github.com/ilhamsaang/ilhamsaang-Tugas-Project-Data-Scientis-Phone-Sales-using-Kaggle-data-and-Streamlit) | 🧾 [Dokumentasi Proyek](https://yourlink.com) | [resource] (https://www.kaggle.com/datasets/yaminh/smartphone-sale-dataset/data)
+> Dashboard interaktif ini dibuat sebagai bagian dari tugas akhir program **Faculty of Data : Data Scientis - Dibimbing**.  
 Terima kasih kepada mentor dan teman-teman yang telah memberikan bimbingan serta dukungan. 🙌  
 """)
 
