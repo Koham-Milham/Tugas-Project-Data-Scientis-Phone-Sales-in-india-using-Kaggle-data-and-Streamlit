@@ -15,12 +15,18 @@ Terima kasih kepada:
 ## 🎯 Tujuan
 
 Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan performa produk smartphone di india berdasarkan:
+
 - Harga jual vs harga asli
+
 - Diskon
+
 - Rating pengguna
+
 - Spesifikasi (RAM, storage, kamera)
+
 - Brand-brand populer di pasar
 
+sebagai acuan rekomendasi untuk membeli smartphone
 ---
 
 ## 📂 Struktur Data
@@ -45,8 +51,11 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 
 ### 1️⃣ Korelasi Fitur Numerik & Performa Brand
 <img src="./asset/heatmap fitur numerik dan performa brand berdasarkan harga vs rating.png" alt="Hasil1" width="300"/>
+
 - <strong>Selling Price</strong> & <strong>Original Price</strong> memiliki korelasi hampir sempurna (0.99)
+
 - <strong>Discount</strong> dan <strong>discount percentage</strong> juga sangat berkorelasi (0.66)
+
 - <strong>Rating</strong> hanya sedikit berkorelasi dengan harga → artinya kualitas tidak selalu tergantung harga
 
 📌 Brand seperti **Apple** punya harga tinggi & rating tinggi, sedangkan brand lain seperti **realme** punya value-for-money bagus.
@@ -56,8 +65,11 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 ### 2️⃣ Korelasi Rating, Diskon & Rata-rata Diskon per Brand
 
 <img src="./asset/Korelasi Rating vs Selling Price, Distribusi diskon, dan rata rata diskon perbrand.png" alt="Hasil2" width="300"/>
+
 - Scatter plot: hubungan rating vs harga jual menunjukkan tren lemah (r = 0.39)
+
 - Histogram: mayoritas produk memiliki diskon sangat kecil atau tidak ada
+
 - Barplot: brand seperti <strong>Motorola, POCO</strong> memberi diskon lebih besar dibanding <strong>Apple/Samsung</strong>
 
 ---
@@ -67,6 +79,7 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 <img src="./asset/Average Selling vs Original Price per Brand (Sorted by Selling Price).png" alt="Hasil3" width="300"/>
 
 - Apple tetap mendominasi dengan harga tertinggi, baik jual maupun asli
+
 - Brand seperti **Infinix**, **Lenovo**, dan **GIONEE** ada di pasar low-end
 
 ---
@@ -74,8 +87,11 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 ### 4️⃣ Diskon: Distribusi & Hubungan dengan Harga
 
 <img src="./asset/distribusi persentase diskon, disribusi persentase diskon per brand, hubungan diskon dan harga jual, korelasi vs presentase diskon.png" alt="Hasil4" width="300"/>
+
 - Diskon >20% sangat jarang
+
 - Beberapa brand tertentu cenderung memberi diskon besar (tapi bukan yang paling laku)
+
 - Korelasi diskon nominal dan persentase cukup kuat → diskon besar = % besar juga
 
 ---
@@ -83,8 +99,11 @@ Membangun **dashboard interaktif Streamlit** untuk menganalisis penjualan dan pe
 ## 🧠 Insight Utama
 
 - **Harga tidak menjamin kualitas** — rating rata-rata hampir merata di semua brand
+
 - **Brand low-end lebih agresif diskon**, tapi tidak menjamin performa lebih baik
+
 - **Apple & Samsung** tetap punya posisi kuat walau minim diskon
+
 - **realme** dan **Redmi** jadi pesaing serius di kategori value-for-money
 
 ---
